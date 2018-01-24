@@ -4,11 +4,11 @@ const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
-const logger = require('koa-logger')
-
+const logger = require('koa-logger') // 用于替代console的东西
+// 如果需要按照时间或者按照文件大小，本地输出log文件的话，建议还是采用log4js-node。
 const index = require('./routes/index')
 const users = require('./routes/users')
-
+const getList = require('./routes/getList')
 // error handler
 onerror(app)
 
@@ -36,6 +36,7 @@ app.use(async (ctx, next) => {
 // allowedMethods 方法就是当前接口运行的method
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(getList.routes(), getList.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {

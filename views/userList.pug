@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  p #{user_list.user_list[1].user_id}
+  ul
+    each val,index in user_list.user_list
+      li= 'user_' + index + ' : ' + val.user_id
