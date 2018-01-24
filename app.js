@@ -6,6 +6,7 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger') // 用于替代console的东西
 // 如果需要按照时间或者按照文件大小，本地输出log文件的话，建议还是采用log4js-node。
+const koaBody = require('koa-body'); // 接收请求body
 const index = require('./routes/index')
 const users = require('./routes/users')
 const getList = require('./routes/getList')
@@ -19,6 +20,8 @@ app.use(bodyparser({
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
+
+app.use(koaBody())
 
 app.use(views(__dirname + '/views', {
   extension: 'pug'
