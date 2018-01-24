@@ -33,6 +33,7 @@ app.use(async (ctx, next) => {
 })
 
 // routes
+// allowedMethods 方法就是当前接口运行的method
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 
