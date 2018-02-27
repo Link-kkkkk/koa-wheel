@@ -16,4 +16,7 @@ router.get('/json', async (ctx, next) => {
   }
 })
 
+router.get('/lcoa', async (ctx , next) => {
+  
+})
 module.exports = router

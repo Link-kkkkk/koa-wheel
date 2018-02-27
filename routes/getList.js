@@ -1,7 +1,7 @@
 const router = require('koa-router')()
 const qs = require('qs');
-const querystring = require('querystring');  
-const koaBody = require('koa-body');
+// const querystring = require('querystring');  
+// const koaBody = require('koa-body');
 
 router.prefix('/userList')
 
@@ -15,7 +15,15 @@ router.get('/', async (ctx, next) => {
 })
 
 router.get('/getJson', async (ctx, next) => {
-  console.log(ctx.request.body);
+  if(!ctx.querystring.length){
+    ctx.body = {
+      code: '501',
+      data: {},
+      msg: '缺少参数'
+    }
+    return
+  }
+  
   // ctx.body = userListData
   // get请求参数带在query
   let data = {
