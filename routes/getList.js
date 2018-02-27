@@ -17,13 +17,13 @@ router.get('/', async (ctx, next) => {
 router.get('/getJson', async (ctx, next) => {
   if(!ctx.querystring.length){
     ctx.body = {
-      code: '501',
+      code: '401',
       data: {},
       msg: '缺少参数'
     }
     return
   }
-  
+
   // ctx.body = userListData
   // get请求参数带在query
   let data = {
@@ -37,7 +37,7 @@ router.get('/getJson', async (ctx, next) => {
 
 router.get('*',async(ctx, next) => {
   ctx.body = {
-    code: '501',
+    code: '401',
     data: {},
     msg: '缺少参数'
   }
