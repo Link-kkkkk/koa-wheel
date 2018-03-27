@@ -1,8 +1,16 @@
 const router = require('koa-router')()
+const Monk = require('monk');
+const db = new Monk('localhost:27017/blog')
+const userModel = require('../model/userList') 
+
+let mongodbBlog = db.get('users')
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
-    title: 'Hello Koa 2!'
+    title: userModel.userIdData.title
+  })
+  await mongodbBlog.find({}, function(err, docs) {
+    console.log(docs)
   })
 })
 

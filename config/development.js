@@ -2,7 +2,7 @@
 
 module.exports = {
   env: 'development',
-  PORT: '3001',
+  PORT: '3000',
   db_url: '',
   redis_url: '',
   redis_port: ''

@@ -1,8 +1,18 @@
-var Mock = require('mockjs')
-var userIdData = Mock.mock({
+let Mock = require('mockjs')
+const Koa = require('koa');
+const app = new Koa();
+const Router = require('koa-router');
+const Monk = require('monk');
+const db = new Monk('localhost/blog')
+const mongodbBlog = db.get('users')
+
+let userIdData = Mock.mock({
+    'title': 'testTitle',
     'user_list|5-10': [{
         'user_id|10000-99999': 1
     }]
 })
 
-module.exports = userIdData
+module.exports = {
+    userIdData: userIdData,
+}
