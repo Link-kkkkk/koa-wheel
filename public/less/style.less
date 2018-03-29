@@ -1,0 +1,65 @@
+@import url('./reset.less');
+
+.header{
+  position: relative;
+  .nav-setting {
+    position: absolute;
+    right: 30px;
+    top: 35px;
+    z-index: 999;
+  }
+  
+  .nav-setting .ui.dropdown.button {
+    padding: 10px 10px 0 10px;
+    background-color: #fff !important;
+  }
+  
+  .nav-setting .icon.bars {
+    color: #000;
+    font-size: 18px;
+  }
+}
+
+.errorBox{
+  .dflex;
+  .flexway(center);
+  text-align: center;
+  margin: 20px 0;
+  .errorContent{
+    padding: 20px 0;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    border-radius: 5px;
+    width: 50%;
+  }
+}
+
+.signinContent{
+  .title{
+    text-align: center;
+    padding-top: 20px;
+    color:@mainColor;
+    font-size:20px;
+  }
+  .sub_title{
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
+.signupContent{
+  .input_box{
+    padding: 0 20%;
+  }
+}
+
+.createContent{
+  .person_card{
+    width: 20%;
+    margin-top: 1.75px;
+    .bio{
+      font-size: 12px;
+      padding-top: 5px;
+      color: rgba(0,0,0,.2);
+    }
+  }
+}

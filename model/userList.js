@@ -2,8 +2,7 @@ let Mock = require('mockjs')
 const Koa = require('koa');
 const app = new Koa();
 const Router = require('koa-router');
-const Monk = require('monk');
-const db = new Monk('localhost/blog')
+const db = require('monk')('localhost/blog')
 const mongodbBlog = db.get('users')
 
 let userIdData = Mock.mock({

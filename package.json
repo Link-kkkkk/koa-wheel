@@ -11,6 +11,8 @@
   "dependencies": {
     "config-lite": "^2.1.0",
     "debug": "^2.6.3",
+    "jquery": "^3.3.1",
+    "jsdom": "^11.6.2",
     "koa": "^2.2.0",
     "koa-body": "^2.5.0",
     "koa-bodyparser": "^3.2.0",

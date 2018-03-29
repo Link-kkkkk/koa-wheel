@@ -6,16 +6,27 @@ const userModel = require('../model/userList')
 let mongodbBlog = db.get('users')
 
 router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: userModel.userIdData.title
+  let data
+  let root = 'http://127.0.0.1:3000/img/'
+  await mongodbBlog.find({ name: 'luca' }).then( (res) => {
+    data = res[0]
   })
-  await mongodbBlog.find({}, function(err, docs) {
-    console.log(docs)
+
+  await ctx.render('index', {
+    title: userModel.userIdData.title,
+    modelData: data.name,
+    password:data.password,
+    gender:data.gender,
+    bio:data.bio,
+    avatar:root + data.avatar,
+    create_date:data.create_date
   })
 })
 
 router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
+  await ctx.render('index', {
+    title: 'string'
+  })
 })
 
 router.get('/json', async (ctx, next) => {
@@ -27,4 +38,5 @@ router.get('/json', async (ctx, next) => {
 router.get('/lcoa', async (ctx , next) => {
   
 })
+
 module.exports = router

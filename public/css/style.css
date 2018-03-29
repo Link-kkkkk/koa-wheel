@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font: 14px "Lucida Grande", "Pingfang SC", Helvetica, Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+em {
+  font-style: normal;
+}
+input {
+  -webkit-user-select: auto;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+.dflex {
+  display: flex;
+  display: -webkit-flex;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+.mine_btn {
+  float: right;
+}
+.mine_btn:after {
+  clear: both;
+}
+.header {
+  position: relative;
+}
+.header .nav-setting {
+  position: absolute;
+  right: 30px;
+  top: 35px;
+  z-index: 999;
+}
+.header .nav-setting .ui.dropdown.button {
+  padding: 10px 10px 0 10px;
+  background-color: #fff !important;
+}
+.header .nav-setting .icon.bars {
+  color: #000;
+  font-size: 18px;
+}
+.errorBox {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  text-align: center;
+  margin: 20px 0;
+}
+.errorBox .errorContent {
+  padding: 20px 0;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  border-radius: 5px;
+  width: 50%;
+}
+.signinContent .title {
+  text-align: center;
+  padding-top: 20px;
+  color: #a18cd1;
+  font-size: 20px;
+}
+.signinContent .sub_title {
+  text-align: center;
+  padding: 20px 0;
+}
+.signupContent .input_box {
+  padding: 0 20%;
+}
+.createContent .person_card {
+  width: 20%;
+  margin-top: 1.75px;
+}
+.createContent .person_card .bio {
+  font-size: 12px;
+  padding-top: 5px;
+  color: rgba(0, 0, 0, 0.2);
+}
