@@ -7,9 +7,8 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger') // 用于替代console的东西
 // 如果需要按照时间或者按照文件大小，本地输出log文件的话，建议还是采用log4js-node。
 const koaBody = require('koa-body'); // 接收请求body
-const index = require('./routes/index')
-const users = require('./routes/users')
-const getList = require('./routes/getList')
+
+const router = require('./routes/index')
 // error handler
 onerror(app)
 
@@ -36,10 +35,7 @@ app.use(async (ctx, next) => {
 })
 
 // routes
-// allowedMethods 方法就是当前接口运行的method
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
-app.use(getList.routes(), getList.allowedMethods())
+router(app)
 
 // error-handling
 app.on('error', (err, ctx) => {

@@ -2,17 +2,19 @@ extends layout
 
 block content
   h1= title
-  form(action="/string" method="get")
+  if modelData
+    form(action="/sendName" method="post")
+      p Welcome to #{title}
+      input(type="text" name="name" placeholder="用户名")
+      input(type="submit" value="click to log")
+    div name : #{modelData}
+    div password : #{password}
+    div gender : #{gender}
+    div bio : #{bio}
+    - var url = avatar
+    div
+      span avatar :
+      img(src=url)
+    div create_date : #{create_date}
+  else
     p Welcome to #{title}
-    input(type="submit" value="click to log")
-  div name : #{modelData}
-  div password : #{password}
-  div gender : #{gender}
-  div bio : #{bio}
-  - var url = avatar
-  div
-    span avatar :
-    img(src=url)
-  div create_date : #{create_date}
-  script.
-    function test(){}
