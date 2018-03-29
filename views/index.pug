@@ -3,9 +3,10 @@ extends layout
 block content
   h1= title
   if modelData
-    form(action="/sendName" method="post")
+    form(action="/checkName" method="get")
       p Welcome to #{title}
-      input(type="text" name="name" placeholder="用户名")
+      div
+        input(type="text" name="username" placeholder="用户名")
       input(type="submit" value="click to log")
     div name : #{modelData}
     div password : #{password}

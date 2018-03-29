@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  if type == 'clear'
+    h1= title
+    div name : #{modelData}
+    div password : #{password}
+    div gender : #{gender}
+    div bio : #{bio}
+    - var url = avatar
+    div
+      span avatar :
+      img(src=url)
+    div create_date : #{create_date}
+  else if type == 'none'
+    h1= '用户不存在'
