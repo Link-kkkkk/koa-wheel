@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  form(action="/search/searchName" method="get")
+      p Search your account
+      div
+        input(type="text" name="username" placeholder="用户名")
+      input(type="submit" value="click to search user")

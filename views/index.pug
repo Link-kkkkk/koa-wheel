@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1= title
+  h1= 'home'
   if modelData
     form(action="/checkName" method="get")
       p Welcome to #{title}
@@ -19,3 +19,5 @@ block content
     div create_date : #{create_date}
   else
     p Welcome to #{title}
+
+  a(class='button' href='/search') 查询
